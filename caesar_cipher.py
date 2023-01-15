@@ -59,13 +59,13 @@ while True:
     if choice == 'encode' or choice == 'decode':
         msg = input("What would you like to " +  choice + "?\n>")
     else:
-        print("That was not one of the options, please try again")
+        input("That was not one of the options, please try again")
         continue
     key = input("What is the key(shift) you would like to use to " + choice + " the message?\n>")
     try:
         key = int(key)
     except ValueError:
-        print("You can only use integers as a key to encrypt the message.\nI mean how do you expect me to move the letters by '" + key + "' amount of places?")
+        input("You can only use integers as a key to encrypt the message.\nI mean how do you expect me to move the letters by '" + key + "' amount of places?")
         continue
     if choice == 'encode':
         print(encode(msg, key), "\n")
